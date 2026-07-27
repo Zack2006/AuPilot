@@ -1,0 +1,31 @@
+{
+  "artifact_version": "aupilot-mn18-three-top-expert-forward-candidate-v1",
+  "component_ids": [
+    "PARENT_BASELINE",
+    "BOTTOM_GEOMETRY",
+    "TOP_FALSE_BREAKOUT",
+    "TOP_TEMPORAL_SHAPE"
+  ],
+  "evidence_identity": [
+    "EXPOSED_FULL_DEVELOPMENT_REFIT",
+    "PENDING_NEW_FORWARD_SHADOW_EVIDENCE",
+    "NOT_HISTORICALLY_INDEPENDENT"
+  ],
+  "historical_performance_claim": false,
+  "input": "COMPLETE_CANONICAL_UTC_DAILY_OHLC_HISTORY_ONLY",
+  "model_id": "MN18_THREE_TOP_EXPERT_FORWARD_SHADOW_CANDIDATE_V1",
+  "model_version": "MN18-FULL-DEVELOPMENT-FORWARD-20260727T114605Z",
+  "price_outlook": null,
+  "routes": {
+    "h1": "THREE_TOP_EXPERT_FIXED_EQUAL_BLEND",
+    "h2": "BOTTOM_GEOMETRY",
+    "h3_h21": "DISPLAY_ONLY"
+  },
+  "top_component_ids": [
+    "PARENT_BASELINE",
+    "TOP_FALSE_BREAKOUT",
+    "TOP_TEMPORAL_SHAPE"
+  ],
+  "top_continuation_attenuation": 0.5,
+  "top_expert_weight": 0.3333333333333333
+}

@@ -1,0 +1,133 @@
+{
+  "artifact_version": "aupilot-mn18-three-top-expert-forward-candidate-v1",
+  "files": {
+    "bottom_geometry_action": {
+      "bytes": 114614,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/bottom_geometry_action_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "2018EF162864C1784E6132698FDE2D3885E564945C8F618615148CC3EB55C7E5"
+    },
+    "bottom_geometry_direction": {
+      "bytes": 70292,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/bottom_geometry_direction_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "1EC0FD57F2B82490134A7204EAAB00BE717180EF54DAB293B7AA2B3282899154"
+    },
+    "bottom_geometry_strength_l2": {
+      "bytes": 113610,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/bottom_geometry_strength_l2_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "2B0A7C1AB18A8FFE3C0F3BAB5D595B35549AFCEFD8C5BC4AE3F69AE967AB070E"
+    },
+    "bottom_geometry_strength_l3": {
+      "bytes": 113339,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/bottom_geometry_strength_l3_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "27B37930AFCE0FA995ABEBD845B931D907ACC837192A599946B4E504EC882F16"
+    },
+    "bundle": {
+      "bytes": 1918507,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/mn18_forward_candidate.joblib",
+      "role": "SERIALIZED_BUNDLE",
+      "sha256": "C497E8251BF7A740023CE64C0CFC8CA10CEC20C40AC2BADB9A49AF4D380716A6"
+    },
+    "metadata": {
+      "bytes": 922,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/model_metadata.json",
+      "role": "MODEL_METADATA",
+      "sha256": "C105B10FD7519AA2E56E5FF4512A0DB0ADD93EE074CC891377DFB7BB6F91FE22"
+    },
+    "near_direction": {
+      "bytes": 149657,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/near_direction_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "7487A1FEAF12701CDF23EA57CC29BCABB4F449D5546FB5414B60A4AA9AB6B96E"
+    },
+    "near_strength_l2": {
+      "bytes": 51277,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/near_strength_l2_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "A2CD2C29D1D8EA97BA8E62C2918F4465C08BDA66C35BC37AB3673847016AD9A6"
+    },
+    "near_strength_l3": {
+      "bytes": 51159,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/near_strength_l3_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "65B3330DBAFED20B5F7C8D590109592ADCC356509124EC4FA76C6C95E9263B78"
+    },
+    "parent_baseline_action": {
+      "bytes": 114005,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/parent_baseline_action_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "1811104F49462C66D9E95776E7E0B5E66581AF100756539A99BFCCFBB46794F9"
+    },
+    "parent_baseline_direction": {
+      "bytes": 70092,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/parent_baseline_direction_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "8B18B9BD645F9EDBE88416A7167E740F0D2A1F4144A1428D2A589868857960F5"
+    },
+    "parent_baseline_strength_l2": {
+      "bytes": 113172,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/parent_baseline_strength_l2_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "62E2E533620FCBF7302F8AF2888BD72537DEBF423EF6AD32462B9784FD93D6E9"
+    },
+    "parent_baseline_strength_l3": {
+      "bytes": 113163,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/parent_baseline_strength_l3_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "F81F3116F2217F6D2941D1BCA6B66160EA6A4EB85263178D0EE2D54BC73070C3"
+    },
+    "top_false_breakout_action": {
+      "bytes": 114230,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_false_breakout_action_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "370C90D21A5BA827AA72094B405482AFF6F3FDCEB351BD0B54718C5DC3609CA6"
+    },
+    "top_false_breakout_direction": {
+      "bytes": 70225,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_false_breakout_direction_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "569A0613E67ED9AAE2F1C6B84F258BEC31F601214836285DE99A7FE372F0E43C"
+    },
+    "top_false_breakout_strength_l2": {
+      "bytes": 113300,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_false_breakout_strength_l2_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "CBA7A750EC81E96FBCF830DA13D62F37AC9BD6602C057E91BF8449597838C31F"
+    },
+    "top_false_breakout_strength_l3": {
+      "bytes": 113231,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_false_breakout_strength_l3_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "39F1A6578DCF984D2DF4B8E06B1CFA67970B187CB5889AA463DF379188427D75"
+    },
+    "top_temporal_shape_action": {
+      "bytes": 114686,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_temporal_shape_action_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "FABD9BC3936023853ACD9AB714F071E4867A1EB6A6ECD6A49BCB538E841B644A"
+    },
+    "top_temporal_shape_direction": {
+      "bytes": 72354,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_temporal_shape_direction_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "B378861E5D1B92EDFFE775C9FCCE2C719F36613D7D42ED1703C06B7BFB4C655E"
+    },
+    "top_temporal_shape_strength_l2": {
+      "bytes": 113755,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_temporal_shape_strength_l2_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "898FFE9C99907D9886AFA366449ECC26EC331D51DD3CCAF4C13C0408683FD64E"
+    },
+    "top_temporal_shape_strength_l3": {
+      "bytes": 112417,
+      "path": "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_temporal_shape_strength_l3_lightgbm.txt",
+      "role": "LIGHTGBM_NATIVE_MODEL",
+      "sha256": "7A95C933B1EC06D17DADF0531F31DF45F4340FA7536B1CD530A0C7E9B4E9DD74"
+    }
+  },
+  "model_id": "MN18_THREE_TOP_EXPERT_FORWARD_SHADOW_CANDIDATE_V1",
+  "model_version": "MN18-FULL-DEVELOPMENT-FORWARD-20260727T114605Z"
+}

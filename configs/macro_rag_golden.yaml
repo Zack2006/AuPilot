@@ -1,0 +1,82 @@
+schema_version: aupilot.macro_rag_golden.v4
+as_of_utc: "2026-01-15T18:00:00Z"
+cases:
+  - case_id: complete_official_evidence_approved
+    calendar_risk_level: Approved
+    calendar_reason_codes: [NO_HIGH_IMPACT_EVENT_IN_48H_WINDOW]
+    expected_risk_level: Approved
+    expected_supported: true
+    expected_reason_codes_contains: [TIER_A_PRIMARY]
+  - case_id: event_in_48h_window_cleared
+    calendar_risk_level: Cleared
+    calendar_reason_codes: [HIGH_IMPACT_EVENT_IN_48H_WINDOW]
+    expected_risk_level: Cleared
+    expected_supported: true
+    expected_reason_codes_contains: [HIGH_IMPACT_EVENT_IN_48H_WINDOW]
+  - case_id: event_near_caution
+    calendar_risk_level: Caution
+    calendar_reason_codes: [HIGH_IMPACT_EVENT_NEAR]
+    expected_risk_level: Caution
+    expected_supported: true
+    expected_reason_codes_contains: [HIGH_IMPACT_EVENT_NEAR]
+  - case_id: imminent_event_hold
+    calendar_risk_level: Hold
+    calendar_reason_codes: [HIGH_IMPACT_EVENT_IMMINENT]
+    expected_risk_level: Hold
+    expected_supported: true
+    expected_reason_codes_contains: [HIGH_IMPACT_EVENT_IMMINENT]
+  - case_id: post_release_cooldown_cancel
+    calendar_risk_level: Cancel
+    calendar_reason_codes: [HIGH_IMPACT_EVENT_COOLDOWN]
+    expected_risk_level: Cancel
+    expected_supported: true
+    expected_reason_codes_contains: [HIGH_IMPACT_EVENT_COOLDOWN]
+  - case_id: missing_pce_uses_data_missing_caution
+    mutation: missing_pce
+    calendar_risk_level: Approved
+    calendar_reason_codes: [NO_HIGH_IMPACT_EVENT_IN_48H_WINDOW]
+    expected_risk_level: Caution
+    expected_supported: false
+    expected_reason_codes_contains: [PCE_LATEST_INITIAL_RELEASE_MISSING, ASSESSMENT_UNAVAILABLE]
+  - case_id: future_fomc_claim_is_ineligible
+    mutation: future_fomc
+    calendar_risk_level: Approved
+    calendar_reason_codes: [NO_HIGH_IMPACT_EVENT_IN_48H_WINDOW]
+    expected_risk_level: Caution
+    expected_supported: false
+    expected_reason_codes_contains: [FOMC_LATEST_OFFICIAL_DECISION_MISSING]
+  - case_id: stale_rate_claim_uses_data_missing_caution
+    mutation: stale_rates
+    calendar_risk_level: Approved
+    calendar_reason_codes: [NO_HIGH_IMPACT_EVENT_IN_48H_WINDOW]
+    expected_risk_level: Caution
+    expected_supported: false
+    expected_reason_codes_contains: [RATES_EFFR_STALE]
+  - case_id: two_independent_tier_b_sources_degrade
+    mutation: tier_b_quorum
+    calendar_risk_level: Approved
+    calendar_reason_codes: [NO_HIGH_IMPACT_EVENT_IN_48H_WINDOW]
+    expected_risk_level: Caution
+    expected_supported: true
+    expected_reason_codes_contains: [TIER_B_INDEPENDENT_QUORUM, SOURCE_DEGRADED]
+  - case_id: duplicate_reprints_do_not_form_quorum
+    mutation: duplicate_reprints
+    calendar_risk_level: Approved
+    calendar_reason_codes: [NO_HIGH_IMPACT_EVENT_IN_48H_WINDOW]
+    expected_risk_level: Caution
+    expected_supported: false
+    expected_reason_codes_contains: [TIER_B_QUORUM_INSUFFICIENT]
+  - case_id: conflicting_fomc_dates_use_data_missing_caution
+    mutation: conflicting_fomc_dates
+    calendar_risk_level: Approved
+    calendar_reason_codes: [NO_HIGH_IMPACT_EVENT_IN_48H_WINDOW]
+    expected_risk_level: Caution
+    expected_supported: false
+    expected_reason_codes_contains: [FOMC_CALENDAR_SECONDARY_CONFLICT]
+  - case_id: revised_nfp_cannot_replace_initial_release
+    mutation: revised_nfp
+    calendar_risk_level: Approved
+    calendar_reason_codes: [NO_HIGH_IMPACT_EVENT_IN_48H_WINDOW]
+    expected_risk_level: Caution
+    expected_supported: false
+    expected_reason_codes_contains: [NFP_LATEST_INITIAL_RELEASE_MISSING]

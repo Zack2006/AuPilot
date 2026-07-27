@@ -1,0 +1,5 @@
+* text=auto eol=lf
+
+# The model runtime is byte-for-byte hash gated.
+model_runtime/** -text
+*.joblib binary
