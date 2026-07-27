@@ -1,0 +1,153 @@
+risk_levels:
+  - {label: Approved, score: 1, meaning: "最低外部消息风险"}
+  - {label: Cleared, score: 2, meaning: "较低外部消息风险"}
+  - {label: Caution, score: 3, meaning: "中等外部消息风险，或因数据缺失无法可靠评估"}
+  - {label: Hold, score: 4, meaning: "较高外部消息风险"}
+  - {label: Cancel, score: 5, meaning: "高相关官方事件发布后 0 至 60 分钟的冷却风险"}
+informational_only: true
+trade_permission: false
+technical_model_input_allowed: false
+decision_engine_input_allowed: false
+historical_profit_tuning_allowed: false
+assessment_unavailable_level: Caution
+event_factor_policy:
+  FOMC: {impact_strength_score: 5, rate_relevance_score: 5}
+  CPI: {impact_strength_score: 5, rate_relevance_score: 5}
+  PCE: {impact_strength_score: 5, rate_relevance_score: 5}
+  NFP: {impact_strength_score: 4, rate_relevance_score: 4}
+calendar_windows:
+  monitoring_hours: 48
+  caution_hours: 24
+  hold_hours: 6
+  post_release_cancel_hours: 1
+expectation_uncertainty:
+  high_confidence_probability: 0.80
+  medium_confidence_probability: 0.60
+  change_floor_percentage_points: 15
+retrieval:
+  engine: sqlite_fts5
+  top_k: 5
+official_sources:
+  - federal_reserve
+  - new_york_fed
+  - us_treasury
+  - bls
+  - bea
+optional_sources:
+  - fred_alfred
+allowed_tier_b_sources: []
+required_coverage:
+  FOMC:
+    calendar: {required: true, freshness_hours: 12}
+    latest_official_decision: {required: true, freshness_hours: 3360}
+    # Current product scope does not collect or infer market-implied probabilities.
+    market_expectation: {required: false, freshness_hours: 24}
+  RATES:
+    effr: {required: true, freshness_hours: 96}
+    nominal_2y: {required: true, freshness_hours: 240}
+    nominal_10y: {required: true, freshness_hours: 240}
+    real_10y: {required: true, freshness_hours: 240}
+    breakeven_proxy_10y: {required: false, freshness_hours: 240}
+  CPI:
+    next_release_time: {required: true, freshness_hours: 12}
+    latest_initial_release: {required: true, freshness_hours: 1488}
+  PCE:
+    next_release_time: {required: true, freshness_hours: 12}
+    latest_initial_release: {required: true, freshness_hours: 1488}
+  NFP:
+    next_release_time: {required: true, freshness_hours: 12}
+    latest_initial_release: {required: true, freshness_hours: 1488}
+shadow_source_pages:
+  - source: federal_reserve
+    event_type: FOMC
+    url: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+  - source: new_york_fed
+    event_type: RATES
+    url: https://www.newyorkfed.org/markets/reference-rates
+  - source: bls
+    event_type: CPI
+    url: https://www.bls.gov/feed/cpi.rss
+  - source: bls
+    event_type: NFP
+    url: https://www.bls.gov/feed/empsit.rss
+  - source: bea
+    event_type: PCE
+    url: https://www.bea.gov/news/schedule/
+calendar_sources:
+  freshness_hours: 6
+  past_days: 2
+  horizon_days: 370
+  sources:
+    - source: federal_reserve
+      event_type: FOMC
+      url: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+      release_hour_et: 14
+      release_minute_et: 0
+    - source: bls_cpi_schedule
+      event_type: CPI
+      url: https://www.bls.gov/schedule/news_release/cpi.htm
+      release_hour_et: 8
+      release_minute_et: 30
+    - source: bea_schedule
+      event_type: PCE
+      url: https://www.bea.gov/news/schedule
+      release_hour_et: 8
+      release_minute_et: 30
+      date_keywords:
+        - personal income and outlays
+        - personal consumption expenditures
+    - source: bls_employment_schedule
+      event_type: NFP
+      url: https://www.bls.gov/schedule/news_release/
+      monthly_url_template: https://www.bls.gov/schedule/{year}/{month:02d}_sched.htm
+      monthly_schedule_months: 2
+      release_name: Employment Situation
+      release_hour_et: 8
+      release_minute_et: 30
+series_whitelist:
+  - CPIAUCSL
+  - CPILFESL
+  - PCEPI
+  - PCEPILFE
+  - PAYEMS
+  - UNRATE
+  - CES0500000003
+  - DFEDTARL
+  - DFEDTARU
+  - DFF
+  - DGS2
+  - DGS10
+  - DFII10
+  - T10YIE
+formal_rate_rag:
+  series_ids:
+    - DFEDTARL
+    - DFEDTARU
+    - DFF
+    - DGS2
+    - DGS10
+    - DFII10
+    - T10YIE
+  maximum_staleness_calendar_days: 10
+  # FRED/ALFRED is an optional cross-check. The RATES slot may be supported
+  # by the official New York Fed document provider when FRED is unavailable.
+  require_for_formal_assessment: false
+provider_endpoints:
+  new_york_fed_effr: https://markets.newyorkfed.org/api/rates/unsecured/effr/last/1.json
+  treasury_nominal: https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml
+  treasury_real: https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml
+  bls_api: https://api.bls.gov/publicAPI/v2/timeseries/data
+  bea_rss: https://apps.bea.gov/rss/rss.xml
+excluded_topics:
+  - GDP
+  - PMI
+  - retail_sales
+  - JOLTS
+  - COT
+  - FedWatch
+  - geopolitics
+  - gold_supply_demand
+  - central_bank_gold_buying
+  - ETF_flows
+  - financial_media
+  - social_media

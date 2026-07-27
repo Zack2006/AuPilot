@@ -1,0 +1,55 @@
+# AurumPilot visual system / AurumPilot 视觉系统
+# English: A warm neutral canvas and restrained gold accent create a calm,
+# financial-research tone while preserving strong text contrast.
+# 中文：暖色中性背景配合克制的金色强调，营造稳健的金融研究气质，并保证文字对比度。
+
+[client]
+# Keep Streamlit's supported navigation and mobile sidebar behavior while
+# hiding development-only toolbar controls such as Deploy.
+toolbarMode = "minimal"
+
+[theme]
+base = "light"
+primaryColor = "#8A6517"
+backgroundColor = "#FCFAF6"
+secondaryBackgroundColor = "#F2EDE3"
+textColor = "#202A2D"
+linkColor = "#76530E"
+borderColor = "#DDD4C5"
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "12px"
+buttonRadius = "10px"
+font = "sans-serif"
+headingFont = "sans-serif"
+baseFontSize = 16
+baseFontWeight = 400
+headingFontSizes = ["34px", "25px", "20px", "17px", "15px", "13px"]
+headingFontWeights = [600, 600, 600, 600, 600, 600]
+linkUnderline = false
+chartCategoricalColors = ["#9B741E", "#315C59", "#567A67", "#B16A4A", "#5A6885", "#8D6A8C"]
+greenColor = "#3E7658"
+greenBackgroundColor = "#E8F3EC"
+greenTextColor = "#2F6248"
+orangeColor = "#A96924"
+orangeBackgroundColor = "#F8ECDD"
+orangeTextColor = "#8B541F"
+redColor = "#A64B42"
+redBackgroundColor = "#F7E6E3"
+redTextColor = "#8D3933"
+blueColor = "#3E6578"
+blueBackgroundColor = "#E8F1F7"
+blueTextColor = "#31586D"
+yellowColor = "#9B741E"
+yellowBackgroundColor = "#F3E9CF"
+yellowTextColor = "#76530E"
+grayColor = "#687274"
+dataframeBorderColor = "#DDD4C5"
+dataframeHeaderBackgroundColor = "#F2EDE3"
+
+[theme.sidebar]
+backgroundColor = "#F2EDE3"
+secondaryBackgroundColor = "#E8E0D2"
+textColor = "#202A2D"
+primaryColor = "#76530E"
+borderColor = "#D5C9B7"

@@ -1,0 +1,135 @@
+name: aurumpilot_mn18_pn02
+
+services:
+  model-sidecar:
+    build:
+      context: .
+      dockerfile: model_sidecar/Dockerfile
+    environment:
+      AUPILOT_DUAL_MODEL_ROOT: /opt/aupilot-models
+      AUPILOT_DUAL_PACKAGE_MANIFEST_SHA256: 233C1EC7936E1072060F7D79E1B1E22F99DE447270979FF0EA70CAE46A1330B4
+      AUPILOT_MN18_BUNDLE_MANIFEST: /opt/aupilot-models/runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/bundle_manifest.json
+      AUPILOT_MN18_BUNDLE_MANIFEST_SHA256: 7325C34BFFF0CD77D658ABED413A23C799F6AE10F693012CB918C1D391702D3D
+      AUPILOT_MN18_MODEL_VERSION: MN18-FULL-DEVELOPMENT-FORWARD-20260727T114605Z
+      AUPILOT_PN02_BUNDLE: /opt/aupilot-models/models/pn02/pn02_conditional_21_slot_ohlc.joblib
+      AUPILOT_PN02_BUNDLE_SHA256: E1FC8FC6849C014D61E284504EBE4070730539B919482EF7178A7AFD08F3E9F8
+      AUPILOT_PN02_MODEL_VERSION: PN02-FULL-DEVELOPMENT-20260727T131932366431Z
+    volumes:
+      - type: bind
+        source: ./storage/market
+        target: /opt/receiver/market
+        read_only: true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8100/api/v1/technical/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 45s
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      STORAGE_DIR: /app/storage
+      TECHNICAL_SIDECAR_URL: http://model-sidecar:8100
+      AUPILOT_DUAL_PACKAGE_MANIFEST_SHA256: 233C1EC7936E1072060F7D79E1B1E22F99DE447270979FF0EA70CAE46A1330B4
+      AUPILOT_DUAL_PACKAGE_FILE_COUNT: "67"
+      AUPILOT_MN18_BUNDLE_MANIFEST_SHA256: 7325C34BFFF0CD77D658ABED413A23C799F6AE10F693012CB918C1D391702D3D
+      AUPILOT_MN18_JOBLIB_SHA256: C497E8251BF7A740023CE64C0CFC8CA10CEC20C40AC2BADB9A49AF4D380716A6
+      AUPILOT_PN02_BUNDLE_SHA256: E1FC8FC6849C014D61E284504EBE4070730539B919482EF7178A7AFD08F3E9F8
+      TECHNICAL_STRATEGY_MIN_GOLD_WEIGHT: "0.5"
+      TECHNICAL_STRATEGY_MAX_GOLD_WEIGHT: "1.0"
+      TECHNICAL_STRATEGY_BOUNDS_SOURCE: MN18_RECEIVER_50_TO_100_PERCENT
+      LOCAL_CONFIG_DIR: /app/local_config
+      LOCAL_CONFIG_DISPLAY_PATH: "${AUPILOT_LOCAL_CONFIG_DISPLAY_PATH:-external/local_config/secrets.json}"
+    volumes:
+      - ./storage:/app/storage
+      - type: bind
+        source: ${AUPILOT_LOCAL_CONFIG_DIR:-../local_config}
+        target: /app/local_config
+    ports:
+      - "127.0.0.1:${AUPILOT_BACKEND_PORT:-8000}:8000"
+    depends_on:
+      model-sidecar:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+  macro-refresh:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      STORAGE_DIR: /app/storage
+      MACRO_REFRESH_INTERVAL_SECONDS: ${MACRO_REFRESH_INTERVAL_SECONDS:-14400}
+      MACRO_REFRESH_RETRY_SECONDS: ${MACRO_REFRESH_RETRY_SECONDS:-600}
+      MACRO_REFRESH_AHEAD_SECONDS: ${MACRO_REFRESH_AHEAD_SECONDS:-1800}
+      MACRO_REFRESH_COMMAND_TIMEOUT_SECONDS: "900"
+      FRED_INCREMENTAL_DAYS: "730"
+      FRED_BOOTSTRAP_DAYS: "730"
+      FRED_API_KEY: ${FRED_API_KEY:-}
+      BLS_API_KEY: ${BLS_API_KEY:-}
+      LOCAL_CONFIG_DIR: /app/local_config
+      LOCAL_CONFIG_DISPLAY_PATH: "${AUPILOT_LOCAL_CONFIG_DISPLAY_PATH:-external/local_config/secrets.json}"
+    volumes:
+      - ./storage:/app/storage
+      - type: bind
+        source: ${AUPILOT_LOCAL_CONFIG_DIR:-../local_config}
+        target: /app/local_config
+    command: ["python", "scripts/macro_refresh_worker.py"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import datetime as dt,json,sys; p='/app/storage/macro/worker_status.json'; d=json.load(open(p, encoding='utf-8')); heartbeat=dt.datetime.fromisoformat(d['updated_at_utc']); age=(dt.datetime.now(dt.timezone.utc)-heartbeat).total_seconds(); sys.exit(0 if d.get('state') == 'running' and age < 900 else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+  technical-issuance:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      STORAGE_DIR: /app/storage
+      TECHNICAL_SIDECAR_URL: http://model-sidecar:8100
+      AUPILOT_DUAL_PACKAGE_MANIFEST_SHA256: 233C1EC7936E1072060F7D79E1B1E22F99DE447270979FF0EA70CAE46A1330B4
+      AUPILOT_DUAL_PACKAGE_FILE_COUNT: "67"
+      AUPILOT_MN18_BUNDLE_MANIFEST_SHA256: 7325C34BFFF0CD77D658ABED413A23C799F6AE10F693012CB918C1D391702D3D
+      AUPILOT_MN18_JOBLIB_SHA256: C497E8251BF7A740023CE64C0CFC8CA10CEC20C40AC2BADB9A49AF4D380716A6
+      AUPILOT_PN02_BUNDLE_SHA256: E1FC8FC6849C014D61E284504EBE4070730539B919482EF7178A7AFD08F3E9F8
+      TECHNICAL_REFRESH_INTERVAL_SECONDS: "21600"
+      LOCAL_CONFIG_DIR: /app/local_config
+      LOCAL_CONFIG_DISPLAY_PATH: "${AUPILOT_LOCAL_CONFIG_DISPLAY_PATH:-external/local_config/secrets.json}"
+    volumes:
+      - ./storage:/app/storage
+      - type: bind
+        source: ${AUPILOT_LOCAL_CONFIG_DIR:-../local_config}
+        target: /app/local_config
+    command: ["python", "scripts/technical_issuance_worker.py"]
+    depends_on:
+      model-sidecar:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import datetime as dt,json,sys; p='/app/storage/technical/worker_status.json'; d=json.load(open(p, encoding='utf-8')); heartbeat=dt.datetime.fromisoformat(d['updated_at_utc']); age=(dt.datetime.now(dt.timezone.utc)-heartbeat).total_seconds(); sys.exit(0 if d.get('state') == 'running' and age < 900 else 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    environment:
+      AURUMPILOT_API_URL: http://backend:8000/api/v1
+      STREAMLIT_BROWSER_GATHER_USAGE_STATS: "false"
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${AUPILOT_FRONTEND_PORT:-8501}:8501"
+    restart: unless-stopped

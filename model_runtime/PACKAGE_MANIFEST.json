@@ -1,0 +1,273 @@
+{
+    "schema_version":  "aupilot.public_model_runtime_manifest.v1",
+    "files":  {
+                  "models/pn02/pn02_conditional_21_slot_ohlc.joblib":  {
+                                                                           "bytes":  207966,
+                                                                           "sha256":  "E1FC8FC6849C014D61E284504EBE4070730539B919482EF7178A7AFD08F3E9F8"
+                                                                       },
+                  "requirements.lock":  {
+                                            "bytes":  233,
+                                            "sha256":  "39DEEABFB924423423BBDBB8D627FB330912AD6C7F8338525D1BC96613D54EE4"
+                                        },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/bottom_geometry_action_lightgbm.txt":  {
+                                                                                                                                         "bytes":  114614,
+                                                                                                                                         "sha256":  "2018EF162864C1784E6132698FDE2D3885E564945C8F618615148CC3EB55C7E5"
+                                                                                                                                     },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/bottom_geometry_direction_lightgbm.txt":  {
+                                                                                                                                            "bytes":  70292,
+                                                                                                                                            "sha256":  "1EC0FD57F2B82490134A7204EAAB00BE717180EF54DAB293B7AA2B3282899154"
+                                                                                                                                        },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/bottom_geometry_strength_l2_lightgbm.txt":  {
+                                                                                                                                              "bytes":  113610,
+                                                                                                                                              "sha256":  "2B0A7C1AB18A8FFE3C0F3BAB5D595B35549AFCEFD8C5BC4AE3F69AE967AB070E"
+                                                                                                                                          },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/bottom_geometry_strength_l3_lightgbm.txt":  {
+                                                                                                                                              "bytes":  113339,
+                                                                                                                                              "sha256":  "27B37930AFCE0FA995ABEBD845B931D907ACC837192A599946B4E504EC882F16"
+                                                                                                                                          },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/bundle_manifest.json":  {
+                                                                                                                          "bytes":  6825,
+                                                                                                                          "sha256":  "7325C34BFFF0CD77D658ABED413A23C799F6AE10F693012CB918C1D391702D3D"
+                                                                                                                      },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/mn18_forward_candidate.joblib":  {
+                                                                                                                                   "bytes":  1918507,
+                                                                                                                                   "sha256":  "C497E8251BF7A740023CE64C0CFC8CA10CEC20C40AC2BADB9A49AF4D380716A6"
+                                                                                                                               },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/model_metadata.json":  {
+                                                                                                                         "bytes":  922,
+                                                                                                                         "sha256":  "C105B10FD7519AA2E56E5FF4512A0DB0ADD93EE074CC891377DFB7BB6F91FE22"
+                                                                                                                     },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/near_direction_lightgbm.txt":  {
+                                                                                                                                 "bytes":  149657,
+                                                                                                                                 "sha256":  "7487A1FEAF12701CDF23EA57CC29BCABB4F449D5546FB5414B60A4AA9AB6B96E"
+                                                                                                                             },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/near_strength_l2_lightgbm.txt":  {
+                                                                                                                                   "bytes":  51277,
+                                                                                                                                   "sha256":  "A2CD2C29D1D8EA97BA8E62C2918F4465C08BDA66C35BC37AB3673847016AD9A6"
+                                                                                                                               },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/near_strength_l3_lightgbm.txt":  {
+                                                                                                                                   "bytes":  51159,
+                                                                                                                                   "sha256":  "65B3330DBAFED20B5F7C8D590109592ADCC356509124EC4FA76C6C95E9263B78"
+                                                                                                                               },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/parent_baseline_action_lightgbm.txt":  {
+                                                                                                                                         "bytes":  114005,
+                                                                                                                                         "sha256":  "1811104F49462C66D9E95776E7E0B5E66581AF100756539A99BFCCFBB46794F9"
+                                                                                                                                     },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/parent_baseline_direction_lightgbm.txt":  {
+                                                                                                                                            "bytes":  70092,
+                                                                                                                                            "sha256":  "8B18B9BD645F9EDBE88416A7167E740F0D2A1F4144A1428D2A589868857960F5"
+                                                                                                                                        },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/parent_baseline_strength_l2_lightgbm.txt":  {
+                                                                                                                                              "bytes":  113172,
+                                                                                                                                              "sha256":  "62E2E533620FCBF7302F8AF2888BD72537DEBF423EF6AD32462B9784FD93D6E9"
+                                                                                                                                          },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/parent_baseline_strength_l3_lightgbm.txt":  {
+                                                                                                                                              "bytes":  113163,
+                                                                                                                                              "sha256":  "F81F3116F2217F6D2941D1BCA6B66160EA6A4EB85263178D0EE2D54BC73070C3"
+                                                                                                                                          },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_false_breakout_action_lightgbm.txt":  {
+                                                                                                                                            "bytes":  114230,
+                                                                                                                                            "sha256":  "370C90D21A5BA827AA72094B405482AFF6F3FDCEB351BD0B54718C5DC3609CA6"
+                                                                                                                                        },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_false_breakout_direction_lightgbm.txt":  {
+                                                                                                                                               "bytes":  70225,
+                                                                                                                                               "sha256":  "569A0613E67ED9AAE2F1C6B84F258BEC31F601214836285DE99A7FE372F0E43C"
+                                                                                                                                           },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_false_breakout_strength_l2_lightgbm.txt":  {
+                                                                                                                                                 "bytes":  113300,
+                                                                                                                                                 "sha256":  "CBA7A750EC81E96FBCF830DA13D62F37AC9BD6602C057E91BF8449597838C31F"
+                                                                                                                                             },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_false_breakout_strength_l3_lightgbm.txt":  {
+                                                                                                                                                 "bytes":  113231,
+                                                                                                                                                 "sha256":  "39F1A6578DCF984D2DF4B8E06B1CFA67970B187CB5889AA463DF379188427D75"
+                                                                                                                                             },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_temporal_shape_action_lightgbm.txt":  {
+                                                                                                                                            "bytes":  114686,
+                                                                                                                                            "sha256":  "FABD9BC3936023853ACD9AB714F071E4867A1EB6A6ECD6A49BCB538E841B644A"
+                                                                                                                                        },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_temporal_shape_direction_lightgbm.txt":  {
+                                                                                                                                               "bytes":  72354,
+                                                                                                                                               "sha256":  "B378861E5D1B92EDFFE775C9FCCE2C719F36613D7D42ED1703C06B7BFB4C655E"
+                                                                                                                                           },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_temporal_shape_strength_l2_lightgbm.txt":  {
+                                                                                                                                                 "bytes":  113755,
+                                                                                                                                                 "sha256":  "898FFE9C99907D9886AFA366449ECC26EC331D51DD3CCAF4C13C0408683FD64E"
+                                                                                                                                             },
+                  "runs/mn18_full_development_forward_candidate/20260727T114605398272Z/bundle/top_temporal_shape_strength_l3_lightgbm.txt":  {
+                                                                                                                                                 "bytes":  112417,
+                                                                                                                                                 "sha256":  "7A95C933B1EC06D17DADF0531F31DF45F4340FA7536B1CD530A0C7E9B4E9DD74"
+                                                                                                                                             },
+                  "runtime_source/aupilot/__init__.py":  {
+                                                             "bytes":  222,
+                                                             "sha256":  "E7DE87803CAD4EA7815E4803C4D6B7D101423A9CB36DE4899340FDE0A53641B9"
+                                                         },
+                  "runtime_source/aupilot/backtest/__init__.py":  {
+                                                                      "bytes":  65,
+                                                                      "sha256":  "2F273E194BA6CD6C2EBCC13188353F38B5DFD52462540AA7F8EAC3021E010D9F"
+                                                                  },
+                  "runtime_source/aupilot/backtest/channel_support_overlay.py":  {
+                                                                                      "bytes":  8407,
+                                                                                      "sha256":  "F5AD5B4AACCDBEA485A55CB58EE8B1A3794778D92F556C14E4D0F3F845248BFA"
+                                                                                 },
+                  "runtime_source/aupilot/backtest/graded_signal_pyramid.py":  {
+                                                                                   "bytes":  12355,
+                                                                                   "sha256":  "98F5F3B9AADD1568B5245C2968F666DE95D8B7CE7014AAB4E23FE7BE6BB4F7FF"
+                                                                               },
+                  "runtime_source/aupilot/backtest/metrics.py":  {
+                                                                     "bytes":  7069,
+                                                                     "sha256":  "74763589D13F87B7EB204ACE29FBEB44C1D271050D513259F04F9346B040529D"
+                                                                 },
+                  "runtime_source/aupilot/backtest/pivot_baseline.py":  {
+                                                                            "bytes":  36026,
+                                                                            "sha256":  "3E8E72958FC157C52A95D96B68306836A01FF3DC3B092530E98425B58FC587F7"
+                                                                        },
+                  "runtime_source/aupilot/backtest/top_trend_soft_sizing.py":  {
+                                                                                   "bytes":  7121,
+                                                                                   "sha256":  "5B9F6E7A86B387806EF9D3EC19EF20239E3AF2E7503C288EC415AF5D6CC8E283"
+                                                                               },
+                  "runtime_source/aupilot/core/__init__.py":  {
+                                                                  "bytes":  75,
+                                                                  "sha256":  "DEA47022A565B93683B5F35BB39FFDA96EEDF48A5702481567EF082911F4C96F"
+                                                              },
+                  "runtime_source/aupilot/core/config.py":  {
+                                                                "bytes":  1117,
+                                                                "sha256":  "73C6AD2DF24861661EB0DE3962A27A23892519F8AA046954DCBE2D6DFA2B58A4"
+                                                            },
+                  "runtime_source/aupilot/core/enums.py":  {
+                                                               "bytes":  1096,
+                                                               "sha256":  "7E1A21AD30C682AB84013FD593D6F8B19F4A006792D2F8E8EF4ECEC2CF3CFCCD"
+                                                           },
+                  "runtime_source/aupilot/core/hashing.py":  {
+                                                                 "bytes":  737,
+                                                                 "sha256":  "8FF722D342FC619F7F9DBB370C286B7E8B00923B53A0F29F0CD7503A667693AC"
+                                                             },
+                  "runtime_source/aupilot/core/manifest.py":  {
+                                                                  "bytes":  1312,
+                                                                  "sha256":  "5929B880CFF26E30F35F5FA2A44AB4F0C12DFA4D933E242B36C369435DEBC81E"
+                                                              },
+                  "runtime_source/aupilot/deployment/__init__.py":  {
+                                                                        "bytes":  76,
+                                                                        "sha256":  "943E146CE96E6A0EE61D1373419DB5124B230A10F0480A738CF172D0D0F57CB3"
+                                                                    },
+                  "runtime_source/aupilot/deployment/m01_graded_release_candidate.py":  {
+                                                                                            "bytes":  30395,
+                                                                                            "sha256":  "3A131A2AAEBD35675E456BC487186E96639D9D77F354EED1B8F71027E8DF73A7"
+                                                                                        },
+                  "runtime_source/aupilot/deployment/mn03_fixed_dual_clock_candidate.py":  {
+                                                                                               "bytes":  28564,
+                                                                                               "sha256":  "1092D8939338BA123CB23453F1853104FC97CC43AFAB746BCB1B7B6847DBFBD2"
+                                                                                           },
+                  "runtime_source/aupilot/deployment/mn18_forward_candidate.py":  {
+                                                                                       "bytes":  28962,
+                                                                                       "sha256":  "9DB1E76600E426708ED775CAD4824800294B2D4A54C2E7F27862F0B1A29DC9FD"
+                                                                                  },
+                  "runtime_source/aupilot/deployment/mn18_pn02_dual_model.py":  {
+                                                                                    "bytes":  4510,
+                                                                                    "sha256":  "426EF17274968C75305422B098560D3F04581A9D3A42DEF338D1B9F4F41CDDC8"
+                                                                                },
+                  "runtime_source/aupilot/deployment/pn02_conditional_price.py":  {
+                                                                                      "bytes":  11104,
+                                                                                      "sha256":  "741E7D5C097F0240A5104962DCD3D8CA9CCB6EB91865B3B8F93BE8977E0D59B6"
+                                                                                  },
+                  "runtime_source/aupilot/deployment/task3_release_candidate.py":  {
+                                                                                       "bytes":  27877,
+                                                                                       "sha256":  "98AF1767AD605FCE4650EB453E750194D11202697D23108975588EB36468A49A"
+                                                                                   },
+                  "runtime_source/aupilot/labels/__init__.py":  {
+                                                                    "bytes":  73,
+                                                                    "sha256":  "B4389CCE43F47F58E7EAD2064C28FB102D3E87448B6B8FDCD01BB7386D0FB4E7"
+                                                                },
+                  "runtime_source/aupilot/labels/main_swing.py":  {
+                                                                      "bytes":  15695,
+                                                                      "sha256":  "A2E33D72446526C6BBFEEA876B7D10DBE81B3FF711DA837B35FA27DA8E1117FA"
+                                                                  },
+                  "runtime_source/aupilot/training/__init__.py":  {
+                                                                      "bytes":  65,
+                                                                      "sha256":  "5936677A810559F6CFAE45CB3E9A4E4A453754024BB1BE6F55314D4A2550A0C1"
+                                                                  },
+                  "runtime_source/aupilot/training/conditional_future_ohlc.py":  {
+                                                                                     "bytes":  26260,
+                                                                                     "sha256":  "31BCC2680FDDAC92643141DDF2A4A40F23578DBA09E998345B6A60658A921238"
+                                                                                 },
+                  "runtime_source/aupilot/training/conditional_ohlc_residual_lightgbm.py":  {
+                                                                                                "bytes":  9459,
+                                                                                                "sha256":  "891EFD47ACE3C570913FB4FB60A478E23FA1D76CDFC62366CF0374C55F53C23B"
+                                                                                            },
+                  "runtime_source/aupilot/training/future_slot_features.py":  {
+                                                                                  "bytes":  13916,
+                                                                                  "sha256":  "7574D8AF8102BC3FE3A673E4D935FABDCCE68775A1F6C566CB7AA8CD5F067742"
+                                                                              },
+                  "runtime_source/aupilot/training/future_slot_hybrid.py":  {
+                                                                                "bytes":  3987,
+                                                                                "sha256":  "479D702081F97FD783637FF24E7D240EB56CFE2C65A300EEFAF83314975D0775"
+                                                                            },
+                  "runtime_source/aupilot/training/future_slot_lightgbm.py":  {
+                                                                                  "bytes":  7779,
+                                                                                  "sha256":  "AD99DD19B96F9A1D0B1BB478F820E24F93AE226531338D6D6494450840631330"
+                                                                              },
+                  "runtime_source/aupilot/training/future_slot_logistic.py":  {
+                                                                                  "bytes":  11825,
+                                                                                  "sha256":  "250BB0C12D010BD3CD13CE66FDFC958F12D9B92CFDE48DF5394F249CD5F4A9D3"
+                                                                              },
+                  "runtime_source/aupilot/training/future_slot_shrinkage.py":  {
+                                                                                   "bytes":  8585,
+                                                                                   "sha256":  "5ADF56915337A87AC41A3BEFCD902116122642D3884D84987DD1EEECD96524E0"
+                                                                               },
+                  "runtime_source/aupilot/training/future_slot_side_regime_gate.py":  {
+                                                                                          "bytes":  12528,
+                                                                                          "sha256":  "85CFD0CCA7A283935E6CF8E9268B942B786EA4FC3113E1580B9585348CE6EAB2"
+                                                                                      },
+                  "runtime_source/aupilot/training/future_slot_technical_features.py":  {
+                                                                                            "bytes":  4868,
+                                                                                            "sha256":  "AC392D99084B6C199EDF831ADA1F869525C7EABB834B3F55E9771646B0AFE442"
+                                                                                        },
+                  "runtime_source/aupilot/training/graded_future_slot.py":  {
+                                                                                "bytes":  21168,
+                                                                                "sha256":  "86626E8FE4804FBB6E7D2FA0BA78C9C17C9436BB52AC14903BD2FE9F3F9BD897"
+                                                                            },
+                  "runtime_source/aupilot/training/graded_hurdle_lightgbm.py":  {
+                                                                                    "bytes":  9760,
+                                                                                    "sha256":  "7B826B73ECBDC4CDAF014C31BC7417C42109C1D56B3DD1BE1A8A40CA2214777D"
+                                                                                },
+                  "runtime_source/aupilot/training/graded_issuance.py":  {
+                                                                             "bytes":  12740,
+                                                                             "sha256":  "94E8552F93041DFB763572473FE02CDEAD32EE8F95CDA342DBFCA9E8C770DF69"
+                                                                         },
+                  "runtime_source/aupilot/training/n_branch_boundary_parity_model.py":  {
+                                                                                            "bytes":  10562,
+                                                                                            "sha256":  "EC9326798A1B395BD781E3EAAD4AFE9EDE320AF915E6093CC74CD6BB1BB4557B"
+                                                                                        },
+                  "runtime_source/aupilot/training/n_branch_clock_role_policy.py":  {
+                                                                                        "bytes":  3393,
+                                                                                        "sha256":  "BF48CE17B89C2B8DF8C3E31B1D23595867C2B2530FE5006AD961496281347926"
+                                                                                    },
+                  "runtime_source/aupilot/training/n_branch_direct_policy.py":  {
+                                                                                    "bytes":  8497,
+                                                                                    "sha256":  "20CD6625EFEB45E4EB2C9BCCCC4C339EC4E327896FEB3F5F5B08EAFF3BB8D4BC"
+                                                                                },
+                  "runtime_source/aupilot/training/n_branch_hurdle_lightgbm.py":  {
+                                                                                      "bytes":  10435,
+                                                                                      "sha256":  "101483641EEF79B8D33AA63512EF0469CD2554540B44FC04C14769B19FA852ED"
+                                                                                  },
+                  "runtime_source/aupilot/training/n_branch_market_geometry.py":  {
+                                                                                      "bytes":  9603,
+                                                                                      "sha256":  "DCB451AF787563B36A6009A04A02B1DD569A5B15C80C364EDCDE71D08E655CF0"
+                                                                                  },
+                  "runtime_source/aupilot/training/n_branch_temporal_shape.py":  {
+                                                                                     "bytes":  12018,
+                                                                                     "sha256":  "0963C92A92D868C09FA4496022497872D193BD8C5CCE2FAFB7A5D617E57320D2"
+                                                                                 },
+                  "runtime_source/aupilot/training/n_branch_top_false_breakout.py":  {
+                                                                                         "bytes":  9812,
+                                                                                         "sha256":  "D106395965BD7B16875C53A125D06E9923ABA94E0E10C4411999EE2DE5BAA6FC"
+                                                                                     },
+                  "runtime_source/aupilot/training/probability_decision.py":  {
+                                                                                  "bytes":  5056,
+                                                                                  "sha256":  "B273FBF20A07416E0401E29AE70EC6308028E30A9E46A6245C9003C617DE3F19"
+                                                                              },
+                  "verify_runtime_package.py":  {
+                                                    "bytes":  1727,
+                                                    "sha256":  "2B2CFF7894E827DA08E8B8FFA08F1883D9B5C45BDF4C379135415AD35141753B"
+                                                }
+              }
+}
