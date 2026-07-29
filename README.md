@@ -39,6 +39,6 @@ http://127.0.0.1:8501/
 
 Author: Zack
 
-Co-author: NTJQKA
+Co-author: NTJQKA pkr2022
 
 2026/07/28
